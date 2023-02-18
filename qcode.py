@@ -1,3 +1,5 @@
+# For QRCode spec, see the link below:
+# https://www.qrcode.com/en/about/standards.html
 import qrcode
 import gradio as gr
 
