@@ -1,0 +1,6 @@
+print(0o312)
+print(0O312)
+print(0o_312)
+print(0O00000000)
+print(0o000_0_0_00000_0)
+print(-0O3_1_2)

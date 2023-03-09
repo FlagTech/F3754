@@ -1,0 +1,6 @@
+print(20 + 3j)
+print(20.0 + 3.0J)
+print(4.5j)
+print(0 + 2j)
+print(4.3 + 0J)
+print(type(1+2j))

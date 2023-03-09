@@ -1,0 +1,1 @@
+distance of marathon = 42.195
