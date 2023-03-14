@@ -1,32 +1,16 @@
-bold =      "\x1B[1m"    # 粗體
-normal =    "\x1B[0m"    # 預設
-underline = "\x1B[4m"    # 底線
-black =     "\x1B[30m"   # 黑色
-red =       "\x1B[31m"   # 紅色
-green =     "\x1B[32m"   # 綠色
-yellow =    "\x1B[33m"   # 黃色
-blue =      "\x1B[34m"   # 藍色
-meganta =   "\x1B[35m"   # 洋紅
-cyan =      "\x1B[36m"   # 青色
-white =     "\x1B[37m"   # 白色
-b_black =   "\x1B[40m"   # 以下設定背景
-b_red =     "\x1B[41m"
-b_green =   "\x1B[42m"
-b_yellow =  "\x1B[43m"
-b_blue =    "\x1B[44m"
-b_meganta = "\x1B[45m"
-b_cyan =    "\x1B[46m"
-print(F"{normal}{black}Hello")
-print(F"{bold}{red}Hello")
-print(F"{normal}{underline}{green}Hello")
-print(F"{normal}{blue}Hello")
-print(F"{bold}{yellow}Hello")
-print(F"{normal}{underline}{meganta}Hello")
-print(F"{normal}{cyan}Hello")
-print(F"{b_black}{white}Hello")
-print(F"{b_red}Hello")
-print(F"{b_green}Hello")
-print(F"{b_blue}Hello")
-print(F"{b_yellow}Hello")
-print(F"{b_meganta}Hello")
-print(F"{b_cyan}Hello")
+print(F"-2 的絕對值是 {abs(-2)}")
+print(F"-3.14159 的絕對值是 {abs(-3.14159)}")
+print(F"3+4J 的絕對值是 {abs(3+4J)}")
+print(F"True 的絕對值是 {abs(True)}")
+
+print(F"pow(2, 3) 是 {pow(2, 3)}")
+print(F"pow(2, 3, 3) 是 {pow(2, 3, 3)}")
+
+print(F"3.5 顯示 20 位小數是 {3.5:.20f}")
+print(F"4.5 顯示 20 位小數是 {4.5:.20f}")
+print(F"round(3.5) 是 {round(3.5)}")
+print(F"round(4.5) 是 {round(4.5)}")
+print(F"1.125 顯示 20 位小數是 {1.125:.20f}")
+print(F"4.375 顯示 20 位小數是 {4.375:.20f}")
+print(F"round(1.125, 2) 是 {round(1.125, 2)}")
+print(F"round(4.375, 2) 是 {round(4.375, 2)}")
