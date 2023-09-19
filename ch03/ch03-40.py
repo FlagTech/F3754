@@ -1,3 +1,9 @@
-print("{} 是{}".format(3.1415, "圓週率"))
-print("{1} 是{0}".format("圓週率", 3.1415))
-print("{0} 取兩位小數是 {0:.2f}".format(1.375))
+print("1A中二".isalnum())   # 中文字元也是字母
+print("1,A中".isalnum())  # "," 是標點符號, 不是字母
+print("123".isalpha())    # 這是數字、不是字母
+print("123".isascii())    # ASCII 編碼範圍
+print("123".isdecimal())  # 10 進位數字
+print("hello".islower())  # 小寫字母
+print("12三四壹".isnumeric()) # 中文數字算在數字類
+print("\n \t\r".isspace()) # 換行、歸位等都算空白
+print("HELLO".isupper())  # 大寫字母

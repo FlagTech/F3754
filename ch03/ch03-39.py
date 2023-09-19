@@ -1,9 +1,3 @@
-intro = "  台灣是個有趣的海島, 歡迎到台灣來。"
-
-print(intro.replace("台灣", "沖繩"))
-print(intro.replace("台灣", "沖繩", 1))
-print(intro)
-
-print(intro.strip())
-print(intro.strip(" 。"))
-print(intro)
+f1 = 123.45
+print(F"{f1} 是整數？{f1.is_integer()}")
+print(F"{f1} 的 100 倍是整數？{(f1 * 100).is_integer()}")

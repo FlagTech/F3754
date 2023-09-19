@@ -1,4 +1,3 @@
-print("2 轉成浮點數是 ", float(2))
-print("'-3.14159' 轉成浮點數是 ", float(-3.14159))
-print("True 轉成浮點數是 ", float(True))
-print("False 轉成浮點數是 ", float(False))
+print("{} 是{}".format(3.1415, "圓週率"))
+print("{1} 是{0}".format("圓週率", 3.1415))
+print("{0} 取兩位小數是 {0:.2f}".format(1.375))

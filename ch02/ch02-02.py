@@ -1,7 +1,3 @@
-def fact(n):
-    if n < 2:
-        return 1
-    return n * fact(n - 1)
-
-if __name__ == '__main__':
-    print(fact(3))
+radius = 5
+pi = 3.14159
+print(2 * radius * pi)

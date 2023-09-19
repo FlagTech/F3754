@@ -1,8 +1,9 @@
-print("3.23 轉成整數是 ", int(3.23))
-print("-3.23 轉成整數是 ", int(-3.23))
-print("'123' 轉成整數是 ", int("123"))
-print("'1A' 以 16 進位解譯轉成整數是 ", int("1A", 16))
-print("'1111' 以 2 進位解譯轉成整數是 ", int("1111", 2))
-print("'111' 以 3 進位解譯轉成整數是 ", int("111", 3))
-print("True 轉成整數是 ", int(True))
-print("False 轉成整數是 ", int(False))
+intro = "  台灣是個有趣的海島, 歡迎到台灣來。"
+
+print(intro.replace("台灣", "沖繩"))
+print(intro.replace("台灣", "沖繩", 1))
+print(intro)
+
+print(intro.strip())
+print(intro.strip(" 。"))
+print(intro)
