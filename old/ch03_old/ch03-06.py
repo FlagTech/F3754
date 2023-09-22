@@ -1,0 +1,6 @@
+print(0x3AC)
+print(0X3AC)
+print(0x_3ac)
+print(0x_3_A_c)
+print(0x00000000000000)
+print(-0X3a_C)

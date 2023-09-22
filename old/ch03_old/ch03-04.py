@@ -1,0 +1,7 @@
+print(0b_101)
+print(0B101)
+print(0b1_0_1)
+print(0b0000000000)
+print(0b000_000_0)
+print(-0b101)
+print(+0b101)

@@ -1,0 +1,16 @@
+print(F"-2 的絕對值是 {abs(-2)}")
+print(F"-3.14159 的絕對值是 {abs(-3.14159)}")
+print(F"3+4J 的絕對值是 {abs(3+4J)}")
+print(F"True 的絕對值是 {abs(True)}")
+
+print(F"pow(2, 3) 是 {pow(2, 3)}")
+print(F"pow(2, 3, 3) 是 {pow(2, 3, 3)}")
+
+print(F"3.5 顯示 20 位小數是 {3.5:.20f}")
+print(F"4.5 顯示 20 位小數是 {4.5:.20f}")
+print(F"round(3.5) 是 {round(3.5)}")
+print(F"round(4.5) 是 {round(4.5)}")
+print(F"1.125 顯示 20 位小數是 {1.125:.20f}")
+print(F"4.375 顯示 20 位小數是 {4.375:.20f}")
+print(F"round(1.125, 2) 是 {round(1.125, 2)}")
+print(F"round(4.375, 2) 是 {round(4.375, 2)}")

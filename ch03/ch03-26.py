@@ -1,8 +1,8 @@
-principle = 1000000 # 本金
-interest = 0.01     # 年息
-years = 5           # 年數
-msg = (f"本金 {principle} 經複利 {interest} 在 {years} 年後"
-      + F"變成 {principle * (1 + interest) ** years}")
-print(msg)
-years += 5
-print(msg)
+print("3.23 轉成整數是 ", int(3.23))
+print("-3.6 轉成整數是 ", int(-3.6))
+print("'123' 轉成整數是 ", int("123"))
+print("'1A' 以 16 進位解譯轉成整數是 ", int("1A", 16))
+print("'1111' 以 2 進位解譯轉成整數是 ", int("1111", 2))
+print("'111' 以 3 進位解譯轉成整數是 ", int("111", 3))
+print("True 轉成整數是 ", int(True))
+print("False 轉成整數是 ", int(False))
