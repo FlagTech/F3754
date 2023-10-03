@@ -1,0 +1,6 @@
+print(f'not True 是 {not True}')
+print(f'not False 是 {not False}')
+print(f'not 0 是 {not 0}')
+print(f'not "" 是 {not ""}')
+print(f'not 1.2 是 {not 1.2}')
+print(f'not "abc" 是 {not "abc"}')
