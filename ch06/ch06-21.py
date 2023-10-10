@@ -1,6 +1,6 @@
 import time
 
-bars = '―\|/―\|/'
+bars = r'―\|/―\|/'
 
 for i in range(5):
     for char in bars:
