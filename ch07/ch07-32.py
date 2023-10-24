@@ -7,3 +7,5 @@ chars_list1 = list(chars_list)
 print(chars_list1)
 print('chars_list is chars_list1:'
       f' {chars_list is chars_list1}')
+print(tuple())
+print(list())
