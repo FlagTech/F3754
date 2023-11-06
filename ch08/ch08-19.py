@@ -1,19 +1,19 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 }
 
-white_list = {
+whitelist = {
     'hacker@hacker.com',
     'infiltrator@infiltrator.com',
     'hacker1@hacker.com'
 }
 
-proper_list = black_list - white_list
+proper_list = blacklist - whitelist
 for hacker in proper_list:
     print(hacker)
 print('-' * 20)
 
-black_list.difference_update(white_list)
-for hacker in black_list:
+blacklist.difference_update(whitelist)
+for hacker in blacklist:
     print(hacker)

@@ -40,6 +40,6 @@ for _ in range(tries):
             print('你猜對了')
             break
         print(f'{green}{"Ⓐ "*A}{default}'
-                f'{blue}{"Ⓑ "*B}{default}')
+              f'{blue}{"Ⓑ "*B}{default}')
 else:
     print(f'你沒有猜對, 答案是 {q}')

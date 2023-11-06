@@ -1,10 +1,10 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 }
 
-print(black_list)
-print(type(black_list))
+print(blacklist)
+print(type(blacklist))
 print({})
 print(type({}))
 print(set())

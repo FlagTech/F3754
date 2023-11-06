@@ -1,4 +1,4 @@
-black_list = frozenset({
+blacklist = frozenset({
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 })
@@ -8,8 +8,8 @@ new_list1 = {
     'infiltrator@infiltrator.com'
 }
 
-union1 = black_list | new_list1
-union2 = new_list1 | black_list
+union1 = blacklist | new_list1
+union2 = new_list1 | blacklist
 
 print(type(union1))
 print(type(union2))

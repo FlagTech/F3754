@@ -1,7 +1,7 @@
-black_list = frozenset([
+blacklist = frozenset([
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 ])
 
-print(black_list)
-print(type(black_list))
+print(blacklist)
+print(type(blacklist))

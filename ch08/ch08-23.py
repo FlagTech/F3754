@@ -1,4 +1,4 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 }
@@ -10,10 +10,10 @@ new_list1 = {
 
 new_list2 = {'hacker1@hacker.com'}
 
-whole_list = black_list | new_list1
+whole_list = blacklist | new_list1
 
 print(new_list1.isdisjoint(new_list2))
-print(whole_list == black_list)
+print(whole_list == blacklist)
 print(whole_list > new_list1)
 print(whole_list >= new_list1)
 print(whole_list.issubset(whole_list))

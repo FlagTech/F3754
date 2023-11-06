@@ -1,27 +1,27 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 }
 
-print(len(black_list))
+print(len(blacklist))
 print('-' * 20)
-black_list.add('hacker@hacker.com')
-black_list.add('infiltrator@infiltrator.com')
-black_list.add('hacker1@hacker.com')
-for hacker in black_list:
+blacklist.add('hacker@hacker.com')
+blacklist.add('infiltrator@infiltrator.com')
+blacklist.add('hacker1@hacker.com')
+for hacker in blacklist:
     print(hacker)
 print('-' * 20)
 
-if 'hacker@hacker.com' in black_list:
+if 'hacker@hacker.com' in blacklist:
     print('hacker@hacker.com 要過濾掉')
 print('-' * 20)
-black_list.remove('hacker@hacker.com')
-black_list.discard('badboy@badbadguy.com')
-for hacker in black_list:
+blacklist.remove('hacker@hacker.com')
+blacklist.discard('badboy@badbadguy.com')
+for hacker in blacklist:
     print(hacker)
 print('-' * 20)
-print(black_list.pop())
-print(black_list)
+print(blacklist.pop())
+print(blacklist)
 print('-' * 20)
-black_list.clear()
-print(black_list)
+blacklist.clear()
+print(blacklist)

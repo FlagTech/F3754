@@ -1,9 +1,9 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com',
     'hacker@hacker.com',
     'infiltrator@infiltrator.com'
 }
 
-for i, hacker in enumerate(black_list):
+for i, hacker in enumerate(blacklist):
     print(i, hacker) 

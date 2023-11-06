@@ -1,4 +1,4 @@
-black_list = {
+blacklist = {
     'hacker@hacker.com',
     'badboy@badbadguy.com'
 }
@@ -9,11 +9,11 @@ new_list = {
     'hacker1@hacker.com'
 }
 
-proper_list = black_list & new_list
+proper_list = blacklist & new_list
 for hacker in proper_list:
     print(hacker)
 print('-' * 20)
 
-black_list.intersection_update(new_list)
-for hacker in black_list:
+blacklist.intersection_update(new_list)
+for hacker in blacklist:
     print(hacker)
