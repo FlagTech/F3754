@@ -1,6 +1,5 @@
-try:
-    config_file_name = input('設定檔名稱：')
-    f = open(config_file_name, 'r+', encoding='utf-8')
+def update_config(filename):
+    f = open(filename, 'r+', encoding='utf-8')
     try:
         name_old = f.readline().strip()
         name = input(f'你的名字 ({name_old})：')
@@ -10,9 +9,16 @@ try:
         f.write(name)
     finally:
         f.close()
+try:
+    config_file_name = input('設定檔名稱：')
+    update_config(config_file_name)
 except FileNotFoundError as e:
     print(f'{e.filename} 設定檔不存在')
+except OSError as e:
+    print('設定檔可能被移除了')
 except KeyboardInterrupt:
     print('取消更新設定檔')
+except:
+    print('發生未知錯誤')
 else:
     print('已成功更新設定檔')

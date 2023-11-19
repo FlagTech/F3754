@@ -10,7 +10,8 @@ def update_config(filename):
     finally:
         f.close()
 try:
-    update_config('config.txt')
+    config_file_name = input('設定檔名稱：')
+    update_config(config_file_name)
 except FileNotFoundError as e:
     print(f'{e.filename} 設定檔不存在')
 except KeyboardInterrupt:

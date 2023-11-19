@@ -10,11 +10,10 @@ def update_config(filename):
     finally:
         f.close()
 try:
-    update_config('conf.txt')
+    config_file_name = input('設定檔名稱：')
+    update_config(config_file_name)
 except OSError as e:
-    print('設定檔可能被移除了')
-except FileNotFoundError as e:
-    print(f'{e.filename} 設定檔不存在')
+    print(f'({e.errno}){e.filename} 設定檔不存在或被移除')
 except KeyboardInterrupt:
     print('取消更新設定檔')
 except:
