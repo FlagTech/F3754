@@ -59,16 +59,21 @@ class TextAnimator: # 定義名稱為 TextAnimator 的新型別
         print('__imul__ called')
         self.interval *= times
         return self
+    
+    def __len__(self):
+        return len(self.txt)
+    
+    def __getitem__(self, index):
+        return self.__class__(
+            self.txt[index],
+            self.interval,
+        )
+                    
+bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
+    r'―\|/―\|/',
+    0.3
+)
 
-if __name__ == '__main__':    
-    bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
-        r'―\|/―\|/',
-        0.3
-    )
-
-    bar_spinner = bar_spinner * 3
-    print(f'{id(bar_spinner)}:{bar_spinner}')
-    bar_spinner = 0.5 * bar_spinner
-    print(f'{id(bar_spinner)}:{bar_spinner}')
-    bar_spinner *= 2
-    print(f'{id(bar_spinner)}:{bar_spinner}')
+bar_spinner = bar_spinner[:4]
+print(len(bar_spinner))
+print(bar_spinner)

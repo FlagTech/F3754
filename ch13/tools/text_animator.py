@@ -33,14 +33,14 @@ class TextAnimator: # 定義名稱為 TextAnimator 的新型別
     
     def __eq__(self, obj):
         print('__eq__ called')
-        if not isinstance(obj, TextAnimator):
+        if not isinstance(obj,  __class__):
             return NotImplemented
         return (self.interval == obj.interval 
                 and self.txt == obj.txt)
 
     def __lt__(self, obj):
         print('__lt__ called')
-        if not isinstance(obj, TextAnimator):
+        if not isinstance(obj,  __class__):
             return NotImplemented
         return (self.interval * len(self.txt) 
                 < obj.interval * len(obj.txt))
@@ -59,16 +59,16 @@ class TextAnimator: # 定義名稱為 TextAnimator 的新型別
         print('__imul__ called')
         self.interval *= times
         return self
-    
-bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
-    r'―\|/―\|/',
-    0.3
-)
 
 if __name__ == '__main__':
-    print(bar_spinner)
     bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
         r'―\|/―\|/',
         0.3
     )
-    bar_spinner.run(3)
+
+    bar_spinner = bar_spinner * 3
+    print(f'{id(bar_spinner)}:{bar_spinner}')
+    bar_spinner = 0.5 * bar_spinner
+    print(f'{id(bar_spinner)}:{bar_spinner}')
+    bar_spinner *= 2
+    print(f'{id(bar_spinner)}:{bar_spinner}')

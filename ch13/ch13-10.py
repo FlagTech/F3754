@@ -2,18 +2,7 @@ import text_animator
 import time
 
 class AdvTextAnimator(text_animator.TextAnimator):
-    __default = None
-
-    @classmethod
-    def get_default(cls):
-        if not cls.__default:
-            cls.__default = cls(
-                r'―\|/―\|/',
-                0.1,
-                1.5
-            )
-        return cls.__default
-        
+    # 定義變化倍數屬性
     @property
     def easing(self):
         return self.__easing
@@ -35,10 +24,40 @@ class AdvTextAnimator(text_animator.TextAnimator):
                 time.sleep(interval)
             interval *= self.easing  # 加長間隔時間
 
-class SuperTextAnimator(AdvTextAnimator):
-    pass
-# 取得預設的動畫效果物件
-default = SuperTextAnimator.get_default()
-print(default.__class__.__name__)
-default = AdvTextAnimator.get_default()
-print(default.__class__.__name__)
+    def __repr__(self):
+        return (f'{self.__class__.__name__}(\n'
+                f'    {self.txt!r}, \n'
+                f'    {self.interval!r}, \n'
+                f'    {self.easing!r}, \n'
+                f')')
+    
+    def __str__(self):
+        return (super().__str__() +
+                f" (每輪調速 {self.easing:.2f} 倍)")
+
+    def __eq__(self, obj):
+        print("child's __eq__ called")
+        if not isinstance(obj, __class__):
+            return False
+        return (super().__eq__(obj) 
+                and (self.easing == obj.easing))
+
+bar_spinner1 = text_animator.TextAnimator(
+    r'―\|/―\|/', 
+    0.3
+)
+        
+bar_spinner2 = AdvTextAnimator(
+    r'―\|/―\|/', 
+    0.3,
+    1.5
+)
+
+bar_spinner3 = AdvTextAnimator(
+    r'―\|/―\|/', 
+    0.3,
+    0.1
+)
+print(bar_spinner1 < bar_spinner2)
+print(bar_spinner2 < bar_spinner3)
+print(bar_spinner3 < bar_spinner1)

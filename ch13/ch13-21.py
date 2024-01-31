@@ -2,7 +2,19 @@ import text_animator
 import time
 
 class AdvTextAnimator(text_animator.TextAnimator):
-    # 定義變化倍數屬性
+    __default = None
+
+    @classmethod
+    def get_default(cls):
+        global __default
+        if not isinstance(__default, cls):
+            __default = cls(
+                r'―\|/―\|/',
+                0.1,
+                1.5
+            )
+        return __default
+        
     @property
     def easing(self):
         return self.__easing
@@ -57,22 +69,5 @@ class AdvTextAnimator(text_animator.TextAnimator):
         print("child's __gt__ called")
         return not (self == obj or self < obj)
 
-bar_spinner1 = text_animator.TextAnimator(
-    r'―\|/―\|/', 
-    0.3
-)
-        
-bar_spinner2 = AdvTextAnimator(
-    r'―\|/―\|/', 
-    0.3,
-    1.5
-)
-
-bar_spinner3 = AdvTextAnimator(
-    r'―\|/―\|/', 
-    0.3,
-    0.1
-)
-print(bar_spinner1 < bar_spinner2)
-print(bar_spinner2 < bar_spinner3)
-print(bar_spinner3 < bar_spinner1)
+# 取得預設的動畫效果物件
+default = AdvTextAnimator.get_default()

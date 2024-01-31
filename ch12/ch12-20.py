@@ -33,17 +33,10 @@ class TextAnimator: # 定義名稱為 TextAnimator 的新型別
     
     def __eq__(self, obj):
         print('__eq__ called')
-        if not isinstance(obj, TextAnimator):
+        if not isinstance(obj, __class__):
             return NotImplemented
         return (self.interval == obj.interval 
                 and self.txt == obj.txt)
-
-    def __lt__(self, obj):
-        print('__lt__ called')
-        if not isinstance(obj, TextAnimator):
-            return NotImplemented
-        return (self.interval * len(self.txt) 
-                < obj.interval * len(obj.txt))
 
 bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
     r'―\|/―\|/',
@@ -51,8 +44,11 @@ bar_spinner = TextAnimator( # 建立物件同時可以設定屬性
 )
 
 heartbeat = TextAnimator( # 建立物件同時可以設定屬性
-    r'·●⬤●·●⬤●·',
+    r'―·●⬤●·●⬤●·',
     0.3
 )
-print(bar_spinner < heartbeat)
-print(bar_spinner > heartbeat)
+print(bar_spinner == heartbeat)
+print(bar_spinner != heartbeat)
+heartbeat.txt = r'―\|/―\|/'
+print(bar_spinner == heartbeat)
+print(r'―\|/―\|/' == bar_spinner)

@@ -4,15 +4,14 @@ import time
 class AdvTextAnimator(text_animator.TextAnimator):
     __default = None
 
-    @classmethod
-    def get_default(cls):
-        if not isinstance(cls.__default, cls):
-            __class__.__default = cls(
+    def get_default():
+        if not AdvTextAnimator.__default:
+            AdvTextAnimator.__default = AdvTextAnimator(
                 r'―\|/―\|/',
                 0.1,
                 1.5
             )
-        return cls.__default
+        return AdvTextAnimator.__default
         
     @property
     def easing(self):
@@ -35,10 +34,39 @@ class AdvTextAnimator(text_animator.TextAnimator):
                 time.sleep(interval)
             interval *= self.easing  # 加長間隔時間
 
-class SuperTextAnimator(AdvTextAnimator):
-    pass
+    def __repr__(self):
+        return (f'{self.__class__.__name__}(\n'
+                f'    {self.txt!r}, \n'
+                f'    {self.interval!r}, \n'
+                f'    {self.easing!r}, \n'
+                f')')
+    
+    def __str__(self):
+        return (super().__str__() +
+                f" (每輪調速 {self.easing:.2f} 倍)")
+
+    def __eq__(self, obj):
+        print("child's __eq__ called")
+        if not isinstance(obj, __class__):
+            return False
+        return (super().__eq__(obj) 
+                and (self.easing == obj.easing))
+
+    def __lt__(self, obj):
+        print("child's __lt__ called")
+        # 只能與文字動畫實例比較
+        if super().__lt__(obj) is NotImplemented:
+            return NotImplemented
+        obj_easing = 1
+        # 同類別或是子類別實例才具備 easing 屬性
+        if isinstance(obj, __class__):
+            obj_easing = obj.easing
+        return (self.easing < obj_easing)
+
+    def __gt__(self, obj):
+        print("child's __gt__ called")
+        return not (self == obj or self < obj)
+
 # 取得預設的動畫效果物件
-default = AdvTextAnimator.get_default()
-print(default.__class__.__name__)
-default = SuperTextAnimator.get_default()
-print(default.__class__.__name__)
+bar_spinner = AdvTextAnimator.get_default()
+bar_spinner.run(3)

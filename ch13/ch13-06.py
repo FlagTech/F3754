@@ -2,17 +2,7 @@ import text_animator
 import time
 
 class AdvTextAnimator(text_animator.TextAnimator):
-    __default = None
-
-    def get_default():
-        if not AdvTextAnimator.__default:
-            AdvTextAnimator.__default = AdvTextAnimator(
-                r'―\|/―\|/',
-                0.1,
-                1.5
-            )
-        return AdvTextAnimator.__default
-        
+    # 定義變化倍數屬性
     @property
     def easing(self):
         return self.__easing
@@ -33,7 +23,11 @@ class AdvTextAnimator(text_animator.TextAnimator):
                 print(f'\r{ch}', end='')
                 time.sleep(interval)
             interval *= self.easing  # 加長間隔時間
-
-# 取得預設的動畫效果物件
-bar_spinner = AdvTextAnimator.get_default()
-bar_spinner.run(3)
+    
+bar_spinner = AdvTextAnimator(
+    r'―\|/―\|/', 
+    0.3,
+    1.5
+)
+print(bar_spinner)
+print(bar_spinner.__repr__())

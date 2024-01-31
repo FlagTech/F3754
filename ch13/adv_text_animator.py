@@ -2,7 +2,18 @@ import text_animator
 import time
 
 class AdvTextAnimator(text_animator.TextAnimator):
-    # 定義變化倍數屬性
+    __default = None
+
+    @classmethod
+    def get_default(cls):
+        if not isinstance(cls.__default, cls):
+            __class__.__default = cls(
+                r'―\|/―\|/',
+                0.1,
+                1.5
+            )
+        return cls.__default
+        
     @property
     def easing(self):
         return self.__easing
@@ -34,11 +45,25 @@ class AdvTextAnimator(text_animator.TextAnimator):
     def __str__(self):
         return (super().__str__() +
                 f" (每輪調速 {self.easing:.2f} 倍)")
-    
-bar_spinner = AdvTextAnimator(
-    r'―\|/―\|/', 
-    0.3,
-    1.5
-)
-print(bar_spinner)
-print(bar_spinner.__repr__())
+
+    def __eq__(self, obj):
+        print("child's __eq__ called")
+        if not isinstance(obj, __class__):
+            return False
+        return (super().__eq__(obj) 
+                and (self.easing == obj.easing))
+
+    def __lt__(self, obj):
+        print("child's __lt__ called")
+        # 只能與文字動畫實例比較
+        if super().__lt__(obj) is NotImplemented:
+            return NotImplemented
+        obj_easing = 1
+        # 同類別或是子類別實例才具備 easing 屬性
+        if isinstance(obj, __class__):
+            obj_easing = obj.easing
+        return (self.easing < obj_easing)
+
+    def __gt__(self, obj):
+        print("child's __gt__ called")
+        return not (self == obj or self < obj)
