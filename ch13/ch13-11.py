@@ -37,14 +37,14 @@ class AdvTextAnimator(text_animator.TextAnimator):
 
     def __eq__(self, obj):
         print("child's __eq__ called")
-        if not isinstance(obj, __class__):
-            return False
-        return (super().__eq__(obj) 
+        if (result := super().__eq__(obj)) is NotImplemented:
+            return NotImplemented
+        return (result # 動畫字串與時間間隔相同
+                and isinstance(obj, __class__)
                 and (self.easing == obj.easing))
 
     def __lt__(self, obj):
         print("child's __lt__ called")
-        # 只能與文字動畫實例比較
         if super().__lt__(obj) is NotImplemented:
             return NotImplemented
         obj_easing = 1

@@ -37,9 +37,10 @@ class AdvTextAnimator(text_animator.TextAnimator):
 
     def __eq__(self, obj):
         print("child's __eq__ called")
-        if not isinstance(obj, __class__):
-            return False
-        return (super().__eq__(obj) 
+        if (result := super().__eq__(obj)) is NotImplemented:
+            return NotImplemented
+        return (result # 動畫字串與時間間隔相同
+                and isinstance(obj, __class__)
                 and (self.easing == obj.easing))
 
 bar_spinner1 = text_animator.TextAnimator(
